@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Demo2": {
+      "commandName": "Project",
+      "commandLineArgs": "fredrik johansson"
+    }
+  }
+}
