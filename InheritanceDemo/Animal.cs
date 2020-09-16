@@ -4,12 +4,17 @@ using System.Text;
 
 namespace InheritanceDemo
 {
-    class Animal
+    abstract class Animal
     {
-        public Animal(string name)
+        public Animal(string name) : this(name, 25.0)
+        {
+        }
+
+        public Animal(string name, double weight) : base()
         {
             Name = name;
-            Console.WriteLine("Animal constructor!");
+            Weight = weight;
+            //Console.WriteLine("Animal constructor!");
         }
 
         public string Name { get; set; }
@@ -19,5 +24,7 @@ namespace InheritanceDemo
         {
             Console.WriteLine($"{Name} is eating!");
         }
+
+        public abstract void Die();
     }
 }

@@ -8,7 +8,7 @@ namespace InheritanceDemo
     {
         public Parrot(int Age)
         {
-            Console.WriteLine("Parrot constructor!");
+            //Console.WriteLine("Parrot constructor!");
             this.Age = Age;
         }
 

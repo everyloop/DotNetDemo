@@ -6,9 +6,14 @@ namespace InheritanceDemo
 {
     class Bird : Animal
     {
-        public Bird() : base()
+        public Bird() : base("Untitled")
         {
-            Console.WriteLine("Bird constructor!");
+            //Console.WriteLine("Bird constructor!");
+        }
+
+        public override void Die()
+        {
+            Console.WriteLine($"{Name} died!");
         }
 
         public void Fly()
