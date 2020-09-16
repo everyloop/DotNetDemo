@@ -6,18 +6,28 @@ namespace Demo2
 {
     public class Cat
     {
-        public string Name { get; set; }
-        public int Age { get; set; } = 0;
+        public readonly string catname = "";
+        private int catage;
 
-        public Cat(string name, int age)
+        private Cat(string name, int age)
         {
-            Name = name;
-            Age = age;
+            catname = name;
+            catage = age;
         }
 
-        public void Talk()
+        public void SayName()
         {
-            Console.WriteLine($"Meoow! My name is {Name}");
+            Console.WriteLine(catname);
+        }
+
+        public static void SaySomething()
+        {
+            Console.WriteLine("Something");
+        }
+
+        public static Cat CreateCat()
+        {
+            return new Cat("privatkatt", 5);
         }
     }
 }
