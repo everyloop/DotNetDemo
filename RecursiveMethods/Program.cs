@@ -21,12 +21,11 @@ namespace RecursiveMethods
         static void Method2(int x)
         {
             x++;
-            //Console.WriteLine($"x = {x}");
-            if (x > 10000)
+            Console.WriteLine($"x = {x}");
+            if (x < 5)
             {
-                Console.WriteLine(x);
+                Method2(x);
             }
-            Method2(x);
         }
     }
 }
