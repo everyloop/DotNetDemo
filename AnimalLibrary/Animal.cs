@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InheritanceDemo
+namespace AnimalLibrary
 {
-    abstract class Animal
+    public abstract class Animal
     {
         public Animal(string name) : this(name, 25.0)
         {

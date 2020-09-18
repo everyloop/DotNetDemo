@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InheritanceDemo
+namespace AnimalLibrary
 {
-    class Sparrow : Bird
+    public class Sparrow : Bird
     {
         public void ClimbThroughSmallHole()
         {
@@ -20,6 +20,11 @@ namespace InheritanceDemo
         public void Sleep()
         {
             Console.WriteLine($"{Name} goes to sleep!");
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

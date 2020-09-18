@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InheritanceDemo
+namespace AnimalLibrary
 {
-    class Bird : Animal
+    public class Bird : Animal
     {
         public Bird() : base("Untitled")
         {
