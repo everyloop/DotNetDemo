@@ -18,8 +18,8 @@ namespace AnimalLibrary
         }
 
         public string Name { get; set; }
-        protected int Age { get; set; }
-        public double Weight { get; set; }
+        protected virtual int Age { get; set; }
+        public virtual double Weight { get; }
         public virtual void Eat()
         {
             Console.WriteLine($"{Name} is eating!");

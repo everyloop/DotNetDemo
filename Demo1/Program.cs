@@ -1,5 +1,5 @@
 ﻿using System;
-using StringExtensions;
+using AnimalLibrary;
 
 namespace Demo1
 {
@@ -7,8 +7,10 @@ namespace Demo1
     {
         static void Main(string[] args)
         {
-            string s = "FREdrik";
-            Console.WriteLine(s.Title());
+            Sparrow sparrow = new Sparrow(25, 1.80);
+            {
+                Console.WriteLine(sparrow.Volume);
+            }
         }
     }
 }
