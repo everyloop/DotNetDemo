@@ -1,16 +1,28 @@
 ﻿using System;
-using AnimalLibrary;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Demo1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Sparrow sparrow = new Sparrow(25, 1.80);
+            Console.WriteLine(Factorial(4));
+        }
+
+        static int Factorial(int number)
+        {
+            if (number == 1)
             {
-                Console.WriteLine(sparrow.Volume);
+                return number;
+            }
+            else
+            {
+                return number * Factorial(number - 1);
             }
         }
+
     }
 }
