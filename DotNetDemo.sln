@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumDemo", "EnumDemo\EnumDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionsDemo", "ExceptionsDemo\ExceptionsDemo.csproj", "{D264CC13-1A2A-4D1A-A93D-BB5410E5CB41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventDemo", "EventDemo\EventDemo.csproj", "{69116459-8B71-435A-9535-CD1D035B1FDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventDemo", "EventDemo\EventDemo.csproj", "{69116459-8B71-435A-9535-CD1D035B1FDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformsBasicControls", "WinformsBasicControls\WinformsBasicControls.csproj", "{8661D68E-61C0-4595-B358-E10CACDBCC4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{69116459-8B71-435A-9535-CD1D035B1FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69116459-8B71-435A-9535-CD1D035B1FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69116459-8B71-435A-9535-CD1D035B1FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8661D68E-61C0-4595-B358-E10CACDBCC4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8661D68E-61C0-4595-B358-E10CACDBCC4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8661D68E-61C0-4595-B358-E10CACDBCC4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8661D68E-61C0-4595-B358-E10CACDBCC4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
