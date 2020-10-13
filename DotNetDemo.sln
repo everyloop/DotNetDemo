@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventDemo", "EventDemo\Even
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformsBasicControls", "WinformsBasicControls\WinformsBasicControls.csproj", "{8661D68E-61C0-4595-B358-E10CACDBCC4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsDemo", "FormsDemo\FormsDemo.csproj", "{8267842E-7912-4ECA-9B23-FA0299BE76CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{8661D68E-61C0-4595-B358-E10CACDBCC4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8661D68E-61C0-4595-B358-E10CACDBCC4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8661D68E-61C0-4595-B358-E10CACDBCC4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8267842E-7912-4ECA-9B23-FA0299BE76CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8267842E-7912-4ECA-9B23-FA0299BE76CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8267842E-7912-4ECA-9B23-FA0299BE76CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8267842E-7912-4ECA-9B23-FA0299BE76CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
