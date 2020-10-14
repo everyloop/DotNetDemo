@@ -21,7 +21,10 @@ namespace FormsDemo
         {
             using (FormAddUser addUserForm = new FormAddUser())
             {
-                // addUserForm.UserName = "Fredrik";
+                // TODO: Uppdatera FormAddUser så att den fyller textboxarna
+                // FirstName och LastName när jag använder följande kod:
+
+                // addUserForm.UserName = "Fredrik Johansson";
 
                 if (addUserForm.ShowDialog() == DialogResult.OK)
                 {
