@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.buttonAddRow = new System.Windows.Forms.Button();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
@@ -41,23 +40,15 @@
             this.labelOrderDate = new System.Windows.Forms.Label();
             this.textBoxOrderID = new System.Windows.Forms.TextBox();
             this.labelOrderID = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Product = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStripOrders = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemInsert = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.contextMenuStripOrders.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -66,10 +57,6 @@
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
-            // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
@@ -77,17 +64,6 @@
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 0;
             this.splitContainer1.Text = "splitContainer1";
-            // 
-            // treeView1
-            // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(266, 589);
-            this.treeView1.TabIndex = 0;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
-            this.treeView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseClick);
             // 
             // splitContainer2
             // 
@@ -107,10 +83,6 @@
             this.splitContainer2.Panel1.Controls.Add(this.labelOrderDate);
             this.splitContainer2.Panel1.Controls.Add(this.textBoxOrderID);
             this.splitContainer2.Panel1.Controls.Add(this.labelOrderID);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer2.Size = new System.Drawing.Size(530, 589);
             this.splitContainer2.SplitterDistance = 230;
             this.splitContainer2.TabIndex = 0;
@@ -124,7 +96,6 @@
             this.buttonAddRow.TabIndex = 8;
             this.buttonAddRow.Text = "Add row";
             this.buttonAddRow.UseVisualStyleBackColor = true;
-            this.buttonAddRow.Click += new System.EventHandler(this.buttonAddRow_Click);
             // 
             // textBoxPhone
             // 
@@ -190,71 +161,21 @@
             this.labelOrderID.TabIndex = 0;
             this.labelOrderID.Text = "Order ID:";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Product,
-            this.UnitPrice,
-            this.Quantity});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(530, 355);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.Text = "dataGridView1";
-            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-            // 
-            // Product
-            // 
-            this.Product.HeaderText = "Product name";
-            this.Product.MinimumWidth = 6;
-            this.Product.Name = "Product";
-            this.Product.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // UnitPrice
-            // 
-            this.UnitPrice.HeaderText = "Unit price";
-            this.UnitPrice.MinimumWidth = 6;
-            this.UnitPrice.Name = "UnitPrice";
-            this.UnitPrice.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // contextMenuStripOrders
             // 
             this.contextMenuStripOrders.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripOrders.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemInsert,
-            this.toolStripMenuItemDelete});
             this.contextMenuStripOrders.Name = "contextMenuStripOrders";
-            this.contextMenuStripOrders.Size = new System.Drawing.Size(123, 52);
+            this.contextMenuStripOrders.Size = new System.Drawing.Size(61, 4);
             // 
             // toolStripMenuItemInsert
             // 
             this.toolStripMenuItemInsert.Name = "toolStripMenuItemInsert";
-            this.toolStripMenuItemInsert.Size = new System.Drawing.Size(122, 24);
-            this.toolStripMenuItemInsert.Text = "Insert";
-            this.toolStripMenuItemInsert.Click += new System.EventHandler(this.toolStripMenuItemInsert_Click);
+            this.toolStripMenuItemInsert.Size = new System.Drawing.Size(32, 19);
             // 
             // toolStripMenuItemDelete
             // 
             this.toolStripMenuItemDelete.Name = "toolStripMenuItemDelete";
-            this.toolStripMenuItemDelete.Size = new System.Drawing.Size(122, 24);
-            this.toolStripMenuItemDelete.Text = "Delete";
-            this.toolStripMenuItemDelete.Click += new System.EventHandler(this.toolStripMenuItemDelete_Click);
+            this.toolStripMenuItemDelete.Size = new System.Drawing.Size(32, 19);
             // 
             // Form1
             // 
@@ -264,19 +185,13 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
-            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.contextMenuStripOrders.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -284,7 +199,6 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.TextBox textBoxContactName;
@@ -293,11 +207,7 @@
         private System.Windows.Forms.Label labelOrderDate;
         private System.Windows.Forms.TextBox textBoxOrderID;
         private System.Windows.Forms.Label labelOrderID;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBoxPhone;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Product;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.Button buttonAddRow;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripOrders;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemInsert;
