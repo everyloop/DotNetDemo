@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.buttonAddRow = new System.Windows.Forms.Button();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.labelPhone = new System.Windows.Forms.Label();
             this.textBoxContactName = new System.Windows.Forms.TextBox();
@@ -43,7 +45,9 @@
             this.Product = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonAddRow = new System.Windows.Forms.Button();
+            this.contextMenuStripOrders = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -53,6 +57,7 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStripOrders.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -82,6 +87,7 @@
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+            this.treeView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseClick);
             // 
             // splitContainer2
             // 
@@ -109,6 +115,16 @@
             this.splitContainer2.SplitterDistance = 230;
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.Text = "splitContainer2";
+            // 
+            // buttonAddRow
+            // 
+            this.buttonAddRow.Location = new System.Drawing.Point(16, 184);
+            this.buttonAddRow.Name = "buttonAddRow";
+            this.buttonAddRow.Size = new System.Drawing.Size(94, 29);
+            this.buttonAddRow.TabIndex = 8;
+            this.buttonAddRow.Text = "Add row";
+            this.buttonAddRow.UseVisualStyleBackColor = true;
+            this.buttonAddRow.Click += new System.EventHandler(this.buttonAddRow_Click);
             // 
             // textBoxPhone
             // 
@@ -217,15 +233,28 @@
             this.Quantity.Name = "Quantity";
             this.Quantity.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // buttonAddRow
+            // contextMenuStripOrders
             // 
-            this.buttonAddRow.Location = new System.Drawing.Point(16, 184);
-            this.buttonAddRow.Name = "buttonAddRow";
-            this.buttonAddRow.Size = new System.Drawing.Size(94, 29);
-            this.buttonAddRow.TabIndex = 8;
-            this.buttonAddRow.Text = "Add row";
-            this.buttonAddRow.UseVisualStyleBackColor = true;
-            this.buttonAddRow.Click += new System.EventHandler(this.buttonAddRow_Click);
+            this.contextMenuStripOrders.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripOrders.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemInsert,
+            this.toolStripMenuItemDelete});
+            this.contextMenuStripOrders.Name = "contextMenuStripOrders";
+            this.contextMenuStripOrders.Size = new System.Drawing.Size(123, 52);
+            // 
+            // toolStripMenuItemInsert
+            // 
+            this.toolStripMenuItemInsert.Name = "toolStripMenuItemInsert";
+            this.toolStripMenuItemInsert.Size = new System.Drawing.Size(122, 24);
+            this.toolStripMenuItemInsert.Text = "Insert";
+            this.toolStripMenuItemInsert.Click += new System.EventHandler(this.toolStripMenuItemInsert_Click);
+            // 
+            // toolStripMenuItemDelete
+            // 
+            this.toolStripMenuItemDelete.Name = "toolStripMenuItemDelete";
+            this.toolStripMenuItemDelete.Size = new System.Drawing.Size(122, 24);
+            this.toolStripMenuItemDelete.Text = "Delete";
+            this.toolStripMenuItemDelete.Click += new System.EventHandler(this.toolStripMenuItemDelete_Click);
             // 
             // Form1
             // 
@@ -247,6 +276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStripOrders.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -269,6 +299,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.Button buttonAddRow;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripOrders;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemInsert;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDelete;
     }
 }
 

@@ -60,7 +60,7 @@ namespace CompanyDB
                             TreeNode detailsNode = new TreeNode()
                             {
                                 Text = $"{detail.Product.ProductName} x {detail.Quantity}",
-                                Tag = order
+                                Tag = detail
                             };
 
                             orderNode.Nodes.Add(detailsNode);
@@ -77,7 +77,21 @@ namespace CompanyDB
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if (e.Node.Tag is Order order)
+            Order order = null;
+
+            if (e.Node.Tag is Order selectedOrder)
+            {
+                order = selectedOrder;
+            }
+            else if (e.Node.Tag is OrderDetail)
+            {
+                if (e.Node.Parent.Tag is Order parentOrder)
+                {
+                    order = parentOrder;
+                }
+            }
+
+            if (order != null)
             {
                 activeOrder = order;
                 textBoxOrderDate.Text = order.OrderDate;
@@ -144,25 +158,35 @@ namespace CompanyDB
             db.Dispose();
         }
 
+        private void toolStripMenuItemDelete_Click(object sender, EventArgs e)
+        {
+            DeleteOrder();
+        }
+
         private void treeView1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)
             {
-                if (treeView1.SelectedNode.Tag is Order order)
-                {
-                    var result = MessageBox.Show(
-                        $"Do you want to delete order on {order.OrderDate}\nfor customer {order.Customer.CompanyName}?", 
-                        "Delete Order",
-                        MessageBoxButtons.YesNo
-                    );
+                DeleteOrder();
+            }
+        }
 
-                    if (result == DialogResult.Yes)
-                    {
-                        db.Remove(order);
-                        var nodeToDelete = treeView1.SelectedNode;
-                        nodeToDelete.Parent.Nodes.Remove(nodeToDelete);
-                        db.SaveChanges();
-                    }
+        private void DeleteOrder()
+        {
+            if (treeView1.SelectedNode.Tag is Order order)
+            {
+                var result = MessageBox.Show(
+                    $"Do you want to delete order on {order.OrderDate}\nfor customer {order.Customer.CompanyName}?",
+                    "Delete Order",
+                    MessageBoxButtons.YesNo
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    db.Remove(order);
+                    var nodeToDelete = treeView1.SelectedNode;
+                    nodeToDelete.Parent.Nodes.Remove(nodeToDelete);
+                    db.SaveChanges();
                 }
             }
         }
@@ -173,7 +197,7 @@ namespace CompanyDB
             {
                 var details = new OrderDetail()
                 {
-                    Id = Guid.NewGuid().ToString().Substring(0, 10)
+                    Id = Guid.NewGuid().ToString()
                 };
 
                 activeOrder.OrderDetails.Add(details);
@@ -195,6 +219,25 @@ namespace CompanyDB
 
             }
 
+        }
+
+        private void treeView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var node = treeView1.GetNodeAt(e.X, e.Y);
+                treeView1.SelectedNode = node;
+
+                if (node.Tag is Order)
+                {
+                    contextMenuStripOrders.Show(treeView1.PointToScreen(new Point(e.X, e.Y)));
+                }
+            }
+        }
+
+        private void toolStripMenuItemInsert_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Insert is not implemented!");
         }
     }
 }
