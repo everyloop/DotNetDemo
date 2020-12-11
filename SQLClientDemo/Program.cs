@@ -9,7 +9,7 @@ namespace SQLClientDemo
 {
     class Program
     {
-        static string connectionString = "Server=localhost;Database=everyloopNET;User Id=dotnet;Password=dotnet;";
+        static string connectionString = "Server=localhost;Database=everyloop;User Id=airport;Password=airport;";
 
         static void Main(string[] args)
         {
@@ -27,15 +27,16 @@ namespace SQLClientDemo
 
         static void RunQuery(string searchString)
         {
-            string query = "Select top 10 [Airport name], IATA, isnull(ICAO, '-') from airports where [Airport name] like '%' + @Userinput + '%';";
+            string query = "Select top 10 [Airport name], IATA, isnull(ICAO, '-') from airports where [Airport name] like '%' + @UserInput + '%';";
 
             Console.WriteLine(query);
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Userinput", searchString);
+                command.Parameters.AddWithValue("@UserInput", searchString);
 
                 SqlDataReader reader = command.ExecuteReader();
 
